@@ -1,0 +1,79 @@
+<template name="smaltPayPalCreditCardForm">
+    <div id="paypal-form">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <i class="fa fa-credit-card"></i>
+                    {{_ 'payPal.payment.payer.fundingInstruments.creditCard.form.title'}}
+                    <strong class="paypal-form-amout pull-right">
+                        {{> smaltPayPalCreditCardFormAmount}}
+                    </strong>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <form>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="name">{{_ 'payPal.payment.payer.fundingInstruments.creditCard.form.name.label'}}</label>
+                                <input id="name" class="form-control" name="name" type="text" placeholder="{{_ 'payPal.payment.payer.fundingInstruments.creditCard.form.name.placeholder'}}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="number">{{_ 'payPal.payment.payer.fundingInstruments.creditCard.form.number.label'}}</label>
+                                <input id="number" class="form-control" name="number" type="text" placeholder="{{_ 'payPal.payment.payer.fundingInstruments.creditCard.form.number.placeholder'}}" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <label for="expire_month">{{_ 'payPal.payment.payer.fundingInstruments.creditCard.form.expireMonth.label'}}</label>
+                                        <select id="expire_month" name="expire_month" class="form-control" required>
+                                            {{#each months}}
+                                                <option value="{{value}}" selected="{{isSelected}}">{{text}}</option>
+                                            {{/each}}
+                                        </select>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <label for="expire_year">{{_ 'payPal.payment.payer.fundingInstruments.creditCard.form.expireYear.label'}}</label>
+                                        <input id="expire_year" class="form-control" name="expire_year" type="text" placeholder="{{thisYear}}" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <label for="type">{{_ 'payPal.payment.payer.fundingInstruments.creditCard.form.type.label'}}</label>
+                                        <select id="type" name="type" class="form-control" required>
+                                            {{#each cards}}
+                                                <option value="{{value}}" class="{{classes}}" selected="{{isSelected}}">{{text}}</option>
+                                            {{/each}}
+                                        </select>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <label for="cvv">{{_ 'payPal.payment.payer.fundingInstruments.creditCard.form.cvv.label'}}</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-lock"></i>
+                                            </span>
+                                            <input id="cvv" class="form-control" name="cvv" type="text" placeholder="{{_ 'payPal.payment.payer.fundingInstruments.creditCard.form.cvv.placeholder'}}" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12 col-sm-offset-3">
+                            <button type="submit" class="btn btn-success btn-block btn-lg">
+                                <i class="fa fa-check"></i>
+                                Valider le payment :
+                                <strong>{{> smaltPayPalCreditCardFormAmount}}</strong>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</template>

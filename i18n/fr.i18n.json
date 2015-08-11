@@ -1,0 +1,52 @@
+{
+  "dates": {
+    "months": {
+      "0": "Janvier",
+      "1": "Fevrier",
+      "2": "Mars",
+      "3": "Avril",
+      "4": "Mai",
+      "5": "Juin",
+      "6": "Juillet",
+      "7": "Août",
+      "8": "Septembre",
+      "9": "Octobre",
+      "10": "Novembre",
+      "11": "Décembre"
+    }
+  },
+  "payPal": {
+    "payment": {
+      "payer": {
+        "fundingInstruments": {
+          "creditCard": {
+            "form": {
+              "title": "Régler votre commande",
+              "name": {
+                "label": "Titulaire",
+                "placeholder": "John Doe"
+              },
+              "number": {
+                "label": "Numéro de carte",
+                "placeholder": "xxxx xxxx xxxx xxxx"
+              },
+              "cvv": {
+                "label": "Code de sécurité",
+                "placeholder": "XXX"
+              },
+              "type": {
+                "label": "Type de carte"
+              },
+              "expireMonth": {
+                "label": "Mois d'expiration"
+              },
+              "expireYear": {
+                "label": "Année d'expiration"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
