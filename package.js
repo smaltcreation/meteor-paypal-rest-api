@@ -19,9 +19,7 @@ Package.onUse(function(api) {
     ], 'client');
 
     api.addFiles([
-      'lib/server/paypal/config.js',
-      'lib/server/payment/details.js',
-      'lib/server/paypal.js',
+      'lib/server/sdk.js',
       'lib/server/payment.js',
       'paypal-rest-api.js'
     ], 'server');
