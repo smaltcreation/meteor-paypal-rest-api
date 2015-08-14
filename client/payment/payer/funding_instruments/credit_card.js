@@ -1,3 +1,9 @@
+Template.smaltPayPalCreditCardForm.onCreated(function () {
+    if (!this.data.id) {
+        this.data.id =  PaymentForm.id
+    }
+});
+
 Template.smaltPayPalCreditCardForm.helpers({
     cards: function () {
         return [{
@@ -24,7 +30,7 @@ Template.smaltPayPalCreditCardForm.helpers({
     },
     months: function () {
         var months = [];
-        for (var i = 0; i < 12; i ++) {
+        for (var i = 1; i <= 12; i ++) {
             months.push({
                 value: i,
                 text: __('dates.months.' + i)

@@ -1,0 +1,29 @@
+<template name="smaltPayPalCreditCardResult">
+    <p>
+        <strong>
+            <i class="fa fa-fw fa-user"></i>
+            {{_ 'payPal.payment.payer.fundingInstruments.creditCard.result.name'}}
+        </strong>
+        {{firstName}}
+        {{lastName}}
+        <br>
+        <strong>
+            <i class="fa fa-fw fa-credit-card"></i>
+            {{_ 'payPal.payment.payer.fundingInstruments.creditCard.result.card'}}
+        </strong>
+        {{cardNumber}}
+        <br>
+        <strong>
+            <i class="fa fa-fw fa-paypal"></i>
+            {{_ 'payPal.payment.payer.fundingInstruments.creditCard.result.id'}}
+        </strong>
+        {{id}}
+        <br>
+        <strong>
+            <i class="fa fa-fw fa-money"></i>
+            {{_ 'payPal.payment.payer.fundingInstruments.creditCard.result.total'}}
+        </strong>
+        {{totalAmount}}
+        {{currency}}
+    </p>
+</template>

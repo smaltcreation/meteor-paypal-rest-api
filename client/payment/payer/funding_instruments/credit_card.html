@@ -11,19 +11,29 @@
                 </h3>
             </div>
             <div class="panel-body">
-                <form>
+                <form id="{{id}}">
                     <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="name">{{_ 'payPal.payment.payer.fundingInstruments.creditCard.form.name.label'}}</label>
-                                <input id="name" class="form-control" name="name" type="text" placeholder="{{_ 'payPal.payment.payer.fundingInstruments.creditCard.form.name.placeholder'}}" required>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label for="first_name">{{_ 'payPal.payment.payer.fundingInstruments.creditCard.form.firstName.label'}}</label>
+                                        <input id="first_name" class="form-control" name="first_name" type="text" placeholder="{{_ 'payPal.payment.payer.fundingInstruments.creditCard.form.firstName.placeholder'}}" required>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label for="last_name">{{_ 'payPal.payment.payer.fundingInstruments.creditCard.form.lastName.label'}}</label>
+                                        <input id="last_name" class="form-control" name="last_name" type="text" placeholder="{{_ 'payPal.payment.payer.fundingInstruments.creditCard.form.lastName.placeholder'}}" required>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="number">{{_ 'payPal.payment.payer.fundingInstruments.creditCard.form.number.label'}}</label>
                                 <input id="number" class="form-control" name="number" type="text" placeholder="{{_ 'payPal.payment.payer.fundingInstruments.creditCard.form.number.placeholder'}}" required>
                             </div>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-xs-6">
@@ -56,22 +66,16 @@
                                             <span class="input-group-addon">
                                                 <i class="fa fa-lock"></i>
                                             </span>
-                                            <input id="cvv" class="form-control" name="cvv" type="text" placeholder="{{_ 'payPal.payment.payer.fundingInstruments.creditCard.form.cvv.placeholder'}}" required>
+                                            <input id="cvv" class="form-control" name="cvv2" type="password" placeholder="{{_ 'payPal.payment.payer.fundingInstruments.creditCard.form.cvv.placeholder'}}" required>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-xs-12 col-sm-offset-3">
-                            <button type="submit" class="btn btn-success btn-block btn-lg">
-                                <i class="fa fa-check"></i>
-                                Valider le payment :
-                                <strong>{{> smaltPayPalCreditCardFormAmount}}</strong>
-                            </button>
-                        </div>
-                    </div>
+                    {{#unless noButton}}
+                        {{> smaltPayPalCreditCardFormButton}}
+                    {{/unless}}
                 </form>
             </div>
         </div>

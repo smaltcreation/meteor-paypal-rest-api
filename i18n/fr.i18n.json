@@ -1,18 +1,18 @@
 {
   "dates": {
     "months": {
-      "0": "Janvier",
-      "1": "Fevrier",
-      "2": "Mars",
-      "3": "Avril",
-      "4": "Mai",
-      "5": "Juin",
-      "6": "Juillet",
-      "7": "Août",
-      "8": "Septembre",
-      "9": "Octobre",
-      "10": "Novembre",
-      "11": "Décembre"
+      "1": "01 Janvier",
+      "2": "02 Fevrier",
+      "3": "03 Mars",
+      "4": "04 Avril",
+      "5": "05 Mai",
+      "6": "06 Juin",
+      "7": "07 Juillet",
+      "8": "08 Août",
+      "9": "09 Septembre",
+      "10": "10 Octobre",
+      "11": "11 Novembre",
+      "12": "12 Décembre"
     }
   },
   "payPal": {
@@ -22,9 +22,13 @@
           "creditCard": {
             "form": {
               "title": "Régler votre commande",
-              "name": {
-                "label": "Titulaire",
-                "placeholder": "John Doe"
+              "firstName": {
+                "label": "Prénom",
+                "placeholder": "John"
+              },
+              "lastName": {
+                "label": "Nom",
+                "placeholder": "Doe"
               },
               "number": {
                 "label": "Numéro de carte",
@@ -42,7 +46,14 @@
               },
               "expireYear": {
                 "label": "Année d'expiration"
-              }
+              },
+              "submit": "Valider le payment"
+            },
+            "result": {
+              "name": "Nom",
+              "card": "Carte",
+              "id": "Référence",
+              "total": "Total"
             }
           }
         }
