@@ -1,5 +1,5 @@
 Package.describe({
-    name: 'smalt:paypal-rest-api',
+    name: 'smaltcreation:paypal-rest-api',
     version: '0.1.0',
     summary: 'Meteor package for PayPal REST API.',
     git: 'https://github.com/SmaltCreation/meteor-paypal-rest-api',
@@ -88,6 +88,6 @@ Package.onUse(function(api) {
 
 Package.onTest(function(api) {
     api.use('tinytest');
-    api.use('smalt:paypal-rest-api');
+    api.use('smaltcreation:paypal-rest-api');
     api.addFiles('paypal-rest-api-tests.js');
 });

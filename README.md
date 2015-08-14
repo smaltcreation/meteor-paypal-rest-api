@@ -7,7 +7,7 @@ Meteor package for PayPal REST API.
 
 ### Usage
 ``` console
-meteor add smalt:paypal-rest-api
+meteor add smaltcreation:paypal-rest-api
 ```
 
 ## Configuration
