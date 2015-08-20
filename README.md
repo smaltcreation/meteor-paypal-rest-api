@@ -14,7 +14,7 @@ meteor add smaltcreation:paypal-rest-api
 If you haven't already, sign up for a developer account at: [https://developer.paypal.com/](https://developer.paypal.com/)
 and create a sandbox application.
 
-In your project, create a file `server/paypal.js` with your application configuration including:
+In your project, create a file `server/lib/paypal.js` with your application configuration including:
 
 ``` javascript
 Smalt.PayPal.configure({
