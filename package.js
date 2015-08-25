@@ -57,6 +57,9 @@ Package.onUse(function(api) {
      */
     api.addFiles([
         'server/payment.js',
+        'server/item.js',
+        'server/invoice/billing_info.js',
+        'server/invoice.js',
         'server/paypal.js',
         'paypal-rest-api.js'
     ], 'server');
