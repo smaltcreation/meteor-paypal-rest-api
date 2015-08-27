@@ -1,6 +1,6 @@
 Package.describe({
     name: 'smaltcreation:paypal-rest-api',
-    version: '0.1.0',
+    version: '0.2.0',
     summary: 'Meteor package for PayPal REST API.',
     git: 'https://github.com/SmaltCreation/meteor-paypal-rest-api',
     documentation: 'README.md'
@@ -40,7 +40,8 @@ Package.onUse(function(api) {
         'client/payment/payer/funding_instruments/credit_card/result.html',
         'client/payment/payer/funding_instruments/credit_card/result.js',
         'client/payment/payer/funding_instruments/credit_card.html',
-        'client/payment/payer/funding_instruments/credit_card.js'
+        'client/payment/payer/funding_instruments/credit_card.js',
+        'client/invoice/email.html'
     ], 'client');
 
     /**

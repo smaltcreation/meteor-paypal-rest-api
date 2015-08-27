@@ -1,6 +1,6 @@
 Template.smaltPayPalCreditCardForm.onCreated(function () {
     if (!this.data.id) {
-        this.data.id =  PaymentForm.id
+        this.data.id = PaymentForm.id
     }
 });
 

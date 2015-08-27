@@ -1,0 +1,111 @@
+<template name="smaltPayPalInvoiceEmail">
+    <head>
+        <style>
+            table {
+                width: 100%;
+                text-align: center;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+            }
+            table th, table td {
+                border: 1px solid #000000;
+            }
+        </style>
+    </head>
+
+    <header>
+        <h2>{{_ 'payPal.invoice.email.title'}}{{id}}</h2>
+        {{#if merchant_info}}
+            <p>
+                {{#if merchant_info.business_name}}
+                    <strong>{{merchant_info.business_name}}</strong><br>
+                {{/if}}
+                <strong>{{merchant_info.email}}</strong>
+            </p>
+            {{#if merchant_info.address}}
+                <p>
+                    {{merchant_info.line1}}<br>
+                    {{merchant_info.postal_code}}
+                    {{merchant_info.city}}
+                    {{#if merchant_info.country_code}}
+                        <br>
+                        {{merchant_info.country_code}}
+                    {{/if}}
+                </p>
+            {{/if}}
+        {{/if}}
+        <h3>
+            {{note}}
+            {{invoice_date}}
+        </h3>
+    </header>
+    <section>
+        <table class="details">
+            <thead>
+                <tr>
+                    <th>{{_ 'payPal.invoice.email.details.name'}}</th>
+                    <th>{{_ 'payPal.invoice.email.details.quantity'}}</th>
+                    <th>{{_ 'payPal.invoice.email.details.price'}}</th>
+                    <th>{{_ 'payPal.invoice.email.details.tax'}}</th>
+                    <th>{{_ 'payPal.invoice.email.details.discount'}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each items}}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td>{{quantity}}</td>
+                        <td>
+                            {{unit_price.value}}
+                            {{unit_price.currency}}
+                        </td>
+                        <td>
+                            {{#if tax}}
+                                {{tax.name}}
+                                {{tax.percent}} %
+                            {{else}}
+                                /-/
+                            {{/if}}
+                        </td>
+                        <td>
+                            {{#if discount}}
+                                {{#if discount.percent}}
+                                    {{discount.percent}} %
+                                {{else}}
+                                    {{discount.amount.value}}
+                                    {{discount.amount.currency}}
+                                {{/if}}
+                            {{else}}
+                                /-/
+                            {{/if}}
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </section>
+    <footer>
+        <table>
+            <thead>
+            <tr>
+                <th>{{_ 'payPal.invoice.email.footer.total'}}</th>
+                <th>{{_ 'payPal.invoice.email.footer.currency'}}</th>
+                <th>{{_ 'payPal.invoice.email.footer.taxeIncluded'}}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{total_amount.value}}</td>
+                <td>{{total_amount.currency}}</td>
+                <td>
+                    {{#if tax_inclusive}}
+                        {{_ 'payPal.invoice.email.footer.taxInclusive.yes'}}
+                    {{else}}
+                        {{_ 'payPal.invoice.email.footer.taxInclusive.no'}}
+                    {{/if}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </footer>
+</template>
